@@ -1,0 +1,29 @@
+{
+  "name": "project1_fishgame",
+  "version": "1.0.0",
+  "description": "unit 1 game project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.generalassemb.ly:daniellehoo/project1_fishgame.git"
+  },
+  "keywords": [
+    "game",
+    "wdi",
+    "project",
+    "unit",
+    "1"
+  ],
+  "author": "Danielle Hoo <daniellem.hoo@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.9.0"
+  },
+  "dependencies": {
+    "eslint": "^4.19.1"
+  }
+}
