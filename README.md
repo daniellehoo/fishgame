@@ -26,13 +26,13 @@ If the player clicks on a goldfish, they get +1 point. If they click on a piranh
 * Game play:
   * Player clicks on bubbles that reveal either goldfish or piranhas
   * Playerscore updates +1 for goldfish and -1 for piranhas
-  * Game uses collision detection to keep fish within the gameboard (the pond)
+  * Game contains keep fish within the gameboard (the pond)
+  * Randomize movement paths of bubbles//fish
   * Game ends//player wins game once they reach 10 points
 
 
 ## POST MVP
 
-* Randomize generation and movement paths of bubbles//fish
 * Enable two player mode
 * Implementation of canvas
 
