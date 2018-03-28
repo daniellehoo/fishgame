@@ -72,11 +72,9 @@ A button will be implemented enabling the player to refresh the page//restart th
 
 ## Functional Components
 
-Based on the initial logic defined in the previous game phases section try and breakdown the logic further into functional components, and by that we mean functions.  
-Does your logic indicate that code could be encapsulated for the purpose of reusability.  
-Once a function has been defined it can then be incorporated into a class as a method.
+Winning logic function (checking for conditionals)
+Score tracking function
 
-Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evaluate game possibilities based on time needed and the actual time you have before game must be submitted.
 
 | Component           | Priority | Estimated Time | Actual Time |
 | ---                 | :---:    |  :---:         | :---:       |
