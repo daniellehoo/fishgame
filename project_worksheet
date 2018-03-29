@@ -1,5 +1,3 @@
-# Project 1: Fish Game
-
 ## Project Description
 
 Fish Pond: Is a game that uses collision detection and event handlers to determine if the player has clicked on a goldfish or a piranha. 
@@ -26,13 +24,13 @@ If the player clicks on a goldfish, they get +1 point. If they click on a piranh
 * Game play:
   * Player clicks on bubbles that reveal either goldfish or piranhas
   * Playerscore updates +1 for goldfish and -1 for piranhas
-  * Game contains keep fish within the gameboard (the pond)
-  * Randomize movement paths of bubbles//fish
+  * Game uses collision detection to keep fish within the gameboard (the pond)
   * Game ends//player wins game once they reach 10 points
 
 
 ## POST MVP
 
+* Randomize generation and movement paths of bubbles//fish
 * Enable two player mode
 * Implementation of canvas
 
@@ -72,9 +70,11 @@ A button will be implemented enabling the player to refresh the page//restart th
 
 ## Functional Components
 
-Winning logic function (checking for conditionals)
-Score tracking function
+Based on the initial logic defined in the previous game phases section try and breakdown the logic further into functional components, and by that we mean functions.  
+Does your logic indicate that code could be encapsulated for the purpose of reusability.  
+Once a function has been defined it can then be incorporated into a class as a method.
 
+Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evaluate game possibilities based on time needed and the actual time you have before game must be submitted.
 
 | Component           | Priority | Estimated Time | Actual Time |
 | ---                 | :---:    |  :---:         | :---:       |
