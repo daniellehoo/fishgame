@@ -60,16 +60,6 @@ animation: moveBubbles 3s infinite;
 top: 200px;
 }
 
-/*#fish1{
-animation: moveBubbles 3s infinite;
-transition: top 2s, left 2s;
-}
-
-#fish2 {
-animation: moveBubbles 3s infinite;
-transition: top 2s, left 2s;
-}*/
-
 @keyframes moveBubbles {
 0% {background-color: #a19026}
 25% {background-color: #324a20}
@@ -87,10 +77,15 @@ transition: top 2s, left 2s;
 }*/
 
 .goldfish {
+  background-image: url("../images/goldfish.png");
+  background-size: cover;
 
 }
 
 .pirnaha {
+  background-image: url("../images/piranha.png");
+  background-size: cover;
+
 
 }
 

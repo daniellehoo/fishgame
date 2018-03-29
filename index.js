@@ -13,21 +13,25 @@ $(document).ready(function(){
 // Step 2: Game play//gameboard and 'pawn' generation. Once a player clicks 'ok' the game start function initializes.
 // Bubbles are generated and begin moving within the pond div.
 
+// Step 3: Eventlisteners. Click events are added to each bubble. If a user clicks on a bubble, the bubble reveals
+// either a goldfish or a pirnaha.
+
 let fish = [];
 
 function createBubbles () {
   for (let i = 0; i <= 10; i++) {
-    let bubble = $('<div>').addClass('bubble');
     let pond = $('.pond');
+    let bubble = $('<div>').addClass('bubble');
       pond.append(bubble);
-  if (i % 2 === 0) {
-    bubble.addClass('goldfish');
-    bubble.attr('id', 'fish' + i);
-    fish.push(bubble);
-  } else {
-    bubble.addClass('pirnaha');
-    bubble.attr('id', 'fish' + i);
-    fish.push(bubble);
+    if (i % 2 === 0) {
+      bubble.addClass('goldfish');
+      bubble.attr('id', 'fish' + i);
+      fish.push(bubble);
+      bubble.on('click', reveal)
+    } else {
+      bubble.addClass('pirnaha');
+      bubble.attr('id', 'fish' + i);
+      fish.push(bubble);
   }
 
   setInterval(function() {
@@ -35,18 +39,23 @@ function createBubbles () {
       $(fish[i]).css("top", Math.random() * window.innerHeight);
       $(fish[i]).css("left", Math.random() * window.innerWidth);
     }
-  }, 500)
+  }, 1000)
 
   }
+}
 
-
-  }
 createBubbles();
 
-//Source: https://git.generalassemb.ly/wdi-nyc-rover/jquery-duck-hunt-lab
+function reveal(event) {
+  if ($(this).hasClass('goldfish')) {
 
-// //Step 3: Eventlisteners. Click events are added to each bubble. If a user clicks on a bubble, the bubble reveals
-// //either a goldfish or a pirnaha.
+    $(this).css('background-image', 'url(images/goldfish.png)');
+} else {
+    $(this).css('background-image', 'url(images/piranha.png)');
+  }
+}
+
+//Source: https://git.generalassemb.ly/wdi-nyc-rover/jquery-duck-hunt-lab
 
 // //Step 4: Scoring. If the user clicks on a goldfish, they get +1 point. If they click on a pirnaha, they get -1 point.
 // let playerScore = $();
