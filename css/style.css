@@ -1,0 +1,138 @@
+body {
+/*background-color: #5d630c;*/
+background: linear-gradient(rgba(255,255,255,.3), rgba(255,255,255,.3)), url("../images/wood1.png");
+background-repeat: repeat;
+background-size: contain;
+width: 100%; height: 100%;
+}
+
+h1 {
+font-family: sans-serif;
+display: inline;
+font-size: 4.5em;
+margin: 30px;
+padding: 20px;
+border: 3px solid black;
+color: black;
+background: white;
+}
+
+h2 {
+font-family: sans-serif;
+display: inline-grid;
+margin: 30px;
+padding: 10px;
+align: left;
+font-size: 2em;
+background: white;
+border: 3px solid black;
+}
+
+.pond {
+  position: relative;
+  background-image: url("../images/pond copy.png");
+  background-size: cover;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+  border: 10px solid #b29d55;
+  width: 1000px;
+  height: 1000px;
+  overflow: hidden;
+  align: center;
+  /*z-index: -1;*/
+}
+
+.bubble {
+position: absolute;
+display: flex;
+background-color: #a19026;
+border-radius: 50%;
+background-position: -100px -160px;
+width: 120px;
+height: 120px;
+transition-timing-function: linear;
+background-repeat: no-repeat;
+animation: moveBubbles 3s infinite;
+/*transition: top 2s, left 2s;
+*/z-index: 3;
+top: 200px;
+}
+
+/*#fish1{
+animation: moveBubbles 3s infinite;
+transition: top 2s, left 2s;
+}
+
+#fish2 {
+animation: moveBubbles 3s infinite;
+transition: top 2s, left 2s;
+}*/
+
+@keyframes moveBubbles {
+0% {background-color: #a19026}
+25% {background-color: #324a20}
+50% {background-color: #7a7065}
+75% {background-color: #a3933c}
+100% {background-color: #525828}
+}
+
+/*@keyframes moveBubbles {
+0% {background-color: #a19026; left: 0px; top: 0px;}
+25% {background-color: #324a20; left: 200px; top: 0px;}
+50% {background-color: #7a7065; left: 200px; top: 200px;}
+75% {background-color: #a3933c; left: 0px; top: 200px;}
+100% {background-color: #525828; left: 0px; top: 0px;}
+}*/
+
+.goldfish {
+
+}
+
+.pirnaha {
+
+}
+
+/*#pond-image {
+  background-image: url("images/pond copy.png");
+  position: relative;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+  border: 7px solid #b29d55;
+  width: 50%;
+  align: center;
+  z-index: -1;
+}
+
+
+/*#pond-image{
+  position: relative;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+  border: 7px solid #b29d55;
+  width: 50%;
+  align: center;
+  z-index: -1;
+}*/
+
+/*.wrapper{
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  grid-gap: 5px;
+  grid-auto-rows: minmax(100px, auto);
+}*/
+
+/*.title {
+  grid-column: 1 / 3;
+  grid-row: 1;
+}
+
+.score {
+  grid-column: 1 / 3;
+  grid-row: 1 / 3;
+}*/
