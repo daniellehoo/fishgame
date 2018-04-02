@@ -18,7 +18,7 @@ $(document).ready(() => {
     const playerName = [];
 
     function landing() {
-      $('#nameForm').submit(function(event) {
+      $('#nameForm').submit((event) => {
         // event.preventDefault();
         const name = $('#nameForm :input').val();
         playerName.push(name);
@@ -27,7 +27,7 @@ $(document).ready(() => {
         function loadIndex() {
           window.location.href = 'index.html';
         }
-      })
+      });
     }
   }
   landing();
@@ -38,115 +38,104 @@ $(document).ready(() => {
     const titleDiv = $('.title');
     const title = $('<h1></h1>').text('Fish Pond');
     const score = $('<h2></h2>')
-      .text(`${playerName}` + `'s Score: ` + 0)
+      .text(`${playerName}'s Score: 0`)
       .addClass('score');
-    let counter = $('<h3></h3>').addClass('timer');
+    const counter = $('<h3></h3>').addClass('timer');
     titleDiv.append(title).append(score).append(counter);
     setTime();
-}
-pageSetup();
+  }
+  pageSetup();
 
-let fish = [];
+  const fish = [];
 
-function createBubbles () {
-  for (let i = 0; i < 30; i++) {
-    let pond = $('.pond');
-    let bubble = $('<div>').addClass('bubble');
+  function createBubbles() {
+    for (let i = 0; i < 30; i++) {
+      const pond = $('.pond');
+      const bubble = $('<div>').addClass('bubble');
       pond.append(bubble);
       bubble.attr('id', 'fish' + i);
       fish.push(bubble);
-      bubble.one('click', reveal)
-    if (i % 4 === 0) {
-      bubble.addClass('pirnaha');
+      bubble.one('click', reveal);
+      if (i % 4 === 0) {
+        bubble.addClass('pirnaha');
+      } else {
+        bubble.addClass('goldfish');
+      }
+
+      setInterval(() => {
+        for (let i = 0; i <= fish.length; i++) {
+          $(fish[i]).css('top', Math.random() * window.innerHeight);
+          $(fish[i]).css('left', Math.random() * window.innerWidth);
+        }
+      }, 1000);
+    }
+  }
+  createBubbles();
+
+  const bubble = $('.bubble');
+  const gameOver = $('.gameover');
+  const restart = $('#restart');
+  let playerScore = 0;
+
+  function reveal(event) {
+    $(event.target).css('animation', 'none').css('border', 'none');
+    $(event.target).fadeOut().delay(7000);
+    $(event.target).fadeIn('fast');
+    if ($(event.target).hasClass('goldfish')) {
+      $(event.target).addClass('clicked');
+      playerScore += 1;
+      $('h2').text(`${playerName}'s Score: ${playerScore}`);
     } else {
-      bubble.addClass('goldfish');
-  }
-
-  setInterval(function() {
-    for (let i = 0; i <= fish.length; i++) {
-      $(fish[i]).css("top", Math.random() * window.innerHeight);
-      $(fish[i]).css("left", Math.random() * window.innerWidth);
+      $(event.target).addClass('clicked');
+      playerScore -= 1;
+      $('h2').text(`${playerName}'s Score: ${playerScore}`);
     }
-  }, 1000)
-
-  }
-}
-createBubbles();
-
-let counter = 0;
-let pond = $('.pond');
-let bubble = $('.bubble');
-let gameOver = $('.gameover');
-let restart = $('#restart');
-let playerScore = 0;
-
-function reveal(event) {
-  $(event.target).css('animation', 'none')
-  .css('border', 'none');
-  $(event.target).fadeOut().delay(7000);
-  $(event.target).fadeIn("fast");
-  if ($(event.target).hasClass('goldfish')) {
-    $(event.target).addClass('clicked');
-    playerScore += 1;
-    $('h2').text(`${playerName}` + `'s Score: ` + `${playerScore}`);
-  } else {
-    $(event.target).addClass('clicked');
-    playerScore -= 1;
-    $('h2').text(`${playerName}` + `'s Score: ` + `${playerScore}`);
-  }
-}
-
-function setTime() {
-  let counter = 20;
-  timer();
-  let time = setInterval(timer,1000);
-
-  function timer() {
-  // let bubble = $('.bubble');
-    $('h3').html( `${timeString(counter)}` );
-    counter--;
-
-    if (counter === 0) {
-      $('h3').html( `${timeString(counter)}` );
-      clearInterval(time);
-      let gameText = $('<h4></h4>').html(`Game over, ${playerName}.
-      <br /> Your score: ${playerScore}`);
-      bubble.unbind('click');
-      gameOver.css('display', 'grid');
-      gameOver.prepend(gameText);
-   }
   }
 
-  function timeString(seconds){
-    let minutesString = Math.floor(seconds / 60);
-    let secondsString = seconds % 60;
-    let resultString = 0;
-    if (secondsString < 10){
-      resultString = `Time Remaining: ${minutesString}:0${secondsString}`;
-    }
-    else {
-      resultString = `Time Remaining: ${minutesString}:${secondsString}`
+  function setTime() {
+    let counter = 20;
+    timer();
+    const time = setInterval(timer, 1000);
+
+    function timer() {
+      $('h3').html(`${timeString(counter)}`);
+      counter--;
+
+      if (counter === 0) {
+        $('h3').html(`${timeString(counter)}`);
+        clearInterval(time);
+        const gameText = $('<h4></h4>').html(`Game over, ${playerName}.
+        <br /> Your score: ${playerScore}`);
+        bubble.unbind('click');
+        gameOver.css('display', 'grid');
+        gameOver.prepend(gameText);
+      }
     }
 
-    return resultString;
+    function timeString(seconds) {
+      const minutesString = Math.floor(seconds / 60);
+      const secondsString = seconds % 60;
+      let resultString = 0;
+      if (secondsString < 10) {
+        resultString = `Time Remaining: ${minutesString}:0${secondsString}`;
+      } else {
+        resultString = `Time Remaining: ${minutesString}:${secondsString}`;
+      }
+      return resultString;
+    }
   }
-}
 
- function restartGame () {
-   restart.click(function () {
-   gameOver.css('display', 'none');
-   // gameOver.remove(gameText);
-   location.reload();
- })
-}
- restartGame();
+  function restartGame() {
+    restart.click(() => {
+      gameOver.css('display', 'none');
+      location.reload();
+    });
+  }
+  restartGame();
 
-//Source: https://git.generalassemb.ly/wdi-nyc-rover/jquery-duck-hunt-lab
-//Source: https://stackoverflow.com/questions/26253787/jquery-countdown-timer-for-games
-
-// //Step 5: Win scenario. Once a player reaches 10 points they win. Upon player win, they receive an alert indicating that they win.
-
-// //Step 6: Reset button. Enable reset button that allows player to restart game.
+// Source: https://git.generalassemb.ly/wdi-nyc-rover/jquery-duck-hunt-lab
+// Source: https://stackoverflow.com/questions/26253787/jquery-countdown-timer-for-games
+// Step 5: Win scenario. Once a player reaches 10 points they win. Upon player win, they receive an alert indicating that they win.
+// Step 6: Reset button. Enable reset button that allows player to restart game.
 
 });
-
