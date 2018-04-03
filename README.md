@@ -63,7 +63,7 @@ Player clicks on bubbles, (which fade to reveal fish of either type goldfish or 
 according to how many goldfish and/or piranhas are clicked.
 
 ### Winning The Game
-Once a player reaches a score of 10 points, an alert pops up telling the player that they have won; gameboard will freeze
+Player has 20 seconds to catch as many fish as possible; when the timer reaches 0, gameboard will freeze
 and player has the option to reset the game with the push of a button.
 
 ### Game Reset
@@ -78,12 +78,12 @@ Score tracking function
 
 | Component           | Priority | Estimated Time | Actual Time |
 | ---                 | :---:    |  :---:         | :---:       |
-| Gameboard Creation  | H        | 5 hrs          | TBD         | 
-| Game Logic          | H        | 3 hrs          | TBD         | 
-| Winning Logic       | H        | 8 hrs          | TBD         | 
-| Page Layout/Design  | M        | 3 hrs          | TBD         |  
-| CSS Animations      | M        | 7 hrs          | TBD         |
-| Landing Page        | M        | 2 hrs          | TBD         | 
-| Win Scenario        | M        | 2 hr           | TBD         | 
-| Restart Button      | H        | 1.5 hrs        | TBD         | 
-| Total               |          | 31.5 hrs       | TBD         | 
+| Gameboard Creation  | H        | 5 hrs          | 8 hrs       | 
+| Game Logic          | H        | 3 hrs          | 10+ hrs     | 
+| Winning Logic       | H        | 8 hrs          | 10 hrs      | 
+| Page Layout/Design  | M        | 3 hrs          | 8 hrs       |  
+| CSS Animations      | M        | 7 hrs          | 5 hrs       |
+| Landing Page        | M        | 2 hrs          | 3 hrs       | 
+| Win Scenario        | M        | 2 hrs          | 4 hrs       | 
+| Restart Button      | H        | 1.5 hrs        | 5 hrs       | 
+| Total               |          | 31.5 hrs       | 53 hrs      | 
