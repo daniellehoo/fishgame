@@ -92,3 +92,7 @@ Score tracking function
 | Win Scenario        | M        | 2 hrs          | 4 hrs       | 
 | Restart Button      | H        | 1.5 hrs        | 5 hrs       | 
 | Total               |          | 31.5 hrs       | 53 hrs      | 
+
+##Slides
+
+![Slides](https://docs.google.com/presentation/d/1kpp7JoRG9ng2pXuST6UEEdIYjML_9TmXEqXXCuj4SWk/edit?usp=sharing)
