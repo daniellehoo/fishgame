@@ -8,11 +8,11 @@ If the player clicks on a goldfish, they get +1 point. If they click on a piranh
 
 ## Wireframes
 
-![Landing Page Wireframe] (https://imgur.com/a/1RsyS)
+![Landing Page Wireframe](https://imgur.com/a/1RsyS)
 
 ![Whiteboard MVP](https://imgur.com/a/cY1wF)
 
-![Wireframe.cc MVP] (https://imgur.com/a/glF6z)
+![Wireframe.cc MVP](https://imgur.com/a/glF6z)
 
 ![Sketch of PostMVP](https://imgur.com/jIfk51R)
 
